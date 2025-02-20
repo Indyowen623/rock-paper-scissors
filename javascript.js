@@ -1,13 +1,25 @@
 /* Logic to get Computer choice */
     /* Create function that randomly returns "rock" "paper" or "scissors" */
         /* Create function called getComputerChoice */
-            /* Generate random number between 1-100 */
-            /* Conditions that determine what numbers return "rock" "paper" or "scissors"
+        function getComputerChoice() {
+            /* Generate random number between 1-3 */
+            let randomNumber = Math.floor(Math.random() * 3) + 1;
+            console.log(randomNumber)
+            /* Conditions that determine what numbers return "rock" "paper" or "scissors" */   
+            if (randomNumber ===1) {
+                return "Rock";
+            } else if (randomNumber === 2) {
+                return "Paper";
+            } else {
+                return "Scissors";
+            }
+        }
+        console.log(getComputerChoice());
         
 /* Logic to get human choice */    
      /* Create function to input human choice */
         /* Create function called getHumanChoice */
-        /* Create loop that only accepts input of "Rock" "Paper" or "Scissors"
+        /* Create loop that only accepts input of "Rock" "Paper" or "Scissors" */
 
 /* Declare players score variables */
     /* Create variables to keep track of score */
