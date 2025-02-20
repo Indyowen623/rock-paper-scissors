@@ -31,14 +31,13 @@
       
             return choice;
         }
-        console.log(`You chose: ${getHumanChoice()}`);
 
 /* Declare players score variables */
     /* Create variables to keep track of score */
         /* Create variable humanScore with initial value 0 */
-        humanScore = 0;
+        let humanScore = 0;
         /* Create variable computerScore with initial value 0 */
-        computerScore = 0;
+        let computerScore = 0;
 
 /* Logic to play single round */
     /* Create function that recieves arguments from getComputerChoice and getHumanChoice, determines a winner, and increments the winner's score 1 point.
@@ -53,26 +52,47 @@
                 (humanChoice === "rock" && computerChoice === "scissors") ||
                 (humanChoice === "paper" && computerChoice === "rock") ||
                 (humanChoice === "scissors" && computerChoice === "paper")
+        /* Declare a round winner */
+            /* Print string that declares winner */
             ) {
                 console.log("You win this round!");
                 humanScore++;
             } else {
                 console.log("Computer wins this round!");
+            /* Increment humanScore or computerScore based on the winner */
                 computerScore++
             }
 
             console.log(`Score - You: ${humanScore}, Computer: ${computerScore}`);
         }
 
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-
-        playRound(humanSelection, computerSelection);
-    /* Declare a round winner */
-      /* Print string that declares winner */
-      /* Increment humanScore or computerScore based on the winner */
-
 /* Logic to play entire game */
     /* Create function called playGame */
+    function playGame() {
+        console.log("Starting Rock-Paper-Scissors... Best of 5!");
+        /* loop for round count */
+        for (let i = 1; i <= 5; i++) {
+            console.log(`Round ${i}`);
+
+            const humanSelection = getHumanChoice();
+            console.log(`You chose: ${humanSelection}`);
+
+            const computerSelection = getComputerChoice();
+            console.log(`Computer chose: ${computerSelection}`);
+
+            playRound(humanSelection, computerSelection);
+        }
+        /* Declare a winner and end of game scripts */
+        console.log("Game Over!");
+        if (humanScore > computerScore) {
+            console.log("You win the game!");
+        } else if (humanScore < computerScore) {
+            console.log("Computer wins the game!");
+        } else {
+            console.log("It's a tie game!");
+        }
+    }
+
+    playGame();
     /* Declare playRound humanScore and computerScore */
     /* Play 5 rounds */
